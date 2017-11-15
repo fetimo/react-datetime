@@ -207,6 +207,15 @@ describe('Datetime', () => {
 		expect(utils.isOpen(component)).toBeTruthy();
 	});
 
+	it('opens picker when setting state', () => {
+		const component = utils.createDatetime({
+			open: false
+		});
+		expect(utils.isOpen(component)).toBeFalsy();
+		component.setProps({ open: true });
+		expect(utils.isOpen(component)).toBeTruthy();
+	});
+
 	it('sets CSS class on selected item (day)', () => {
 		const component = utils.createDatetime({ viewMode: 'days' });
 		utils.openDatepicker(component);
