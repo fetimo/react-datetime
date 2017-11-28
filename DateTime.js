@@ -354,6 +354,7 @@ var Datetime = createClass({
 
 	openCalendar: function( e ) {
 		if ( !this.state.open ) {
+			e.persist();
 			this.setState({ open: true }, function() {
 				this.props.onFocus( e );
 			});
